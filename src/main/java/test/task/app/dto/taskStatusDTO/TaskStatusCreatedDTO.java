@@ -1,5 +1,6 @@
 package test.task.app.dto.taskStatusDTO;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,6 +11,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Schema(description = "Создание статуса")
 public class TaskStatusCreatedDTO {
     @NotNull
     private String name;

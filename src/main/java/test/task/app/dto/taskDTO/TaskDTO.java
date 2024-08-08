@@ -2,6 +2,7 @@ package test.task.app.dto.taskDTO;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,6 +11,7 @@ import java.util.List;
 
 @Getter
 @Setter
+@Schema(description = "Сущность задача")
 public class TaskDTO {
     private String title;
     private String description;
