@@ -14,16 +14,5 @@ spring:
         enabled: always
     hibernate:
       ddl-auto: update
-  datasource:
-    url: jdbc:postgresql://db:5432/postDB
-    driver-class-name: org.postgresql.Driver
-    username: admin
-    password: zxc123
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-
-debug: true
-logging:
-  level:
-    root: DEBUG
-    org.springframework.web: DEBUG
-    org.apache.coyote.http11: DEBUG
+    profiles:
+      active: development

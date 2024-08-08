@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://db:5432/postDB
+    driver-class-name: org.postgresql.Driver
+    username: admin
+    password: zxc123
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html

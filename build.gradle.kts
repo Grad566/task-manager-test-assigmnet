@@ -57,6 +57,10 @@ dependencies {
 	implementation("net.datafaker:datafaker:2.0.2")
 	implementation("org.instancio:instancio-junit:3.3.0")
 
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-api:2.6.0")
+	implementation("org.springdoc:springdoc-openapi-starter-webflux-api:2.6.0")
+
 }
 
 tasks.withType<Test> {
