@@ -24,7 +24,4 @@ public class UserCreatedDTO {
     @Size(min = 3)
     @Schema(description = "Пароль обязательно")
     private String password;
-    @Schema(description = "Созданные задачи опционально")
-    private JsonNullable<List<Long>> createdTasks;
-    private JsonNullable<List<Long>> assignedTasks;
 }
