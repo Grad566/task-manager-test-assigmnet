@@ -9,7 +9,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
 
 @Getter
 @Setter
-@Schema(description = "Обновление приоритета")
+@Schema(description = "Обновление приоритета, все опционально")
 public class PriorityUpdatedDTO {
     @NotNull
     @NotBlank

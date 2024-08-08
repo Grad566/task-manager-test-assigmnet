@@ -7,7 +7,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
 
 @Getter
 @Setter
-@Schema(description = "обновления комментария")
+@Schema(description = "обновления комментария, все опционально")
 public class CommentaryUpdatedDTO {
     @Schema(description = "Содержание опционально")
     private JsonNullable<String> content;

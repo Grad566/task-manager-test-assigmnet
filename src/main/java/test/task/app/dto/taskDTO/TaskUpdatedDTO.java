@@ -11,7 +11,7 @@ import java.util.List;
 
 @Getter
 @Setter
-@Schema(description = "Обновление задачи")
+@Schema(description = "Обновление задачи, все опционально")
 public class TaskUpdatedDTO {
     @Schema(description = "Название опционально")
     private JsonNullable<String> title;

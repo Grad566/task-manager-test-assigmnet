@@ -7,7 +7,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
 
 @Getter
 @Setter
-@Schema(description = "Обновление статуса")
+@Schema(description = "Обновление статуса, все опционально")
 public class TaskStatusUpdatedDTO {
     @Schema(description = "Название опционально")
     private JsonNullable<String> name;
