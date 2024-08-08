@@ -1,7 +1,7 @@
 [![My test](https://github.com/Grad566/task-manager-test-assigmnet/actions/workflows/myTest.yml/badge.svg)](https://github.com/Grad566/task-manager-test-assigmnet/actions/workflows/myTest.yml)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/52b94f0c716421f7da11/test_coverage)](https://codeclimate.com/github/Grad566/task-manager-test-assigmnet/test_coverage)
 
-## Тестовое задание от Искра технологии
+## Тестовое задание от Effective Mobile
 
 Приложение представляет собой менеджер задач.
 
