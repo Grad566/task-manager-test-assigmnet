@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 import test.task.app.dto.AuthRequest;
 import test.task.app.util.JWTUtils;
 
+/**
+ * Контроллер для управления аутентификацией пользователей.
+ * Этот контроллер обрабатывает запросы на вход в систему и генерирует JWT токены.
+ */
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/api")

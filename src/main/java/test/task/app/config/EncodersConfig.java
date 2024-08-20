@@ -17,16 +17,29 @@ import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 import test.task.app.component.RsaKeyProperties;
 
 
-
+/**
+ * Конфигурационный класс для настройки кодировщиков и декодировщиков JWT,
+ * а также для настройки кодировщика паролей.
+ * Этот класс использует свойства ключей RSA для создания JWT-кодировщика и декодировщика.
+ */
 @Configuration
 @RequiredArgsConstructor
 public class EncodersConfig {
     private final RsaKeyProperties rsaKeys;
+
+    /**
+     * Создает и настраивает {@link BCryptPasswordEncoder} для кодирования паролей.
+     * @return объект {@link BCryptPasswordEncoder}, используемый для хеширования паролей.
+     */
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
+    /**
+     * Создает и настраивает {@link JwtEncoder} для кодирования JWT.
+     * @return объект {@link JwtEncoder}, используемый для создания JWT.
+     */
     @Bean
     JwtEncoder jwtEncoder() {
         JWK jwk = new RSAKey.Builder(rsaKeys.getPublicKey()).privateKey(rsaKeys.getPrivateKey()).build();
@@ -34,6 +47,10 @@ public class EncodersConfig {
         return new NimbusJwtEncoder(jwks);
     }
 
+    /**
+     * Создает и настраивает {@link JwtDecoder} для декодирования JWT.
+     * @return объект {@link JwtDecoder}, используемый для проверки и декодирования JWT.
+     */
     @Bean
     JwtDecoder jwtDecoder() {
         return NimbusJwtDecoder.withPublicKey(rsaKeys.getPublicKey()).build();

@@ -18,6 +18,11 @@ import test.task.app.service.TaskStatusService;
 
 import java.util.ArrayList;
 
+/**
+ * Компонент для инициализации данных приложения.
+ * Этот класс реализует интерфейс {@link ApplicationRunner} и используется для
+ * создания начальных данных в базе данных при запуске приложения.
+ */
 @Component
 @RequiredArgsConstructor
 public class DataInitializer implements ApplicationRunner {
@@ -29,6 +34,13 @@ public class DataInitializer implements ApplicationRunner {
     private final PriorityService priorityService;
 
 
+    /**
+     * Метод, который выполняется при запуске приложения.
+     * Этот метод проверяет наличие администратора и создает его, если он отсутствует.
+     * Также он инициализирует статусы задач и приоритеты по умолчанию, если они не существуют.
+     * @param args аргументы командной строки, переданные приложению
+     * @throws Exception если возникает ошибка во время инициализации данных.
+     */
     @Override
     public void run(ApplicationArguments args) throws Exception {
         if (userRepository.findByEmail("admin@example.com").isEmpty()) {

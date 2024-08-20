@@ -19,6 +19,11 @@ import org.springframework.security.web.servlet.util.matcher.MvcRequestMatcher;
 import org.springframework.web.servlet.handler.HandlerMappingIntrospector;
 import test.task.app.service.CustomUserDetailsService;
 
+/**
+ * Конфигурационный класс для настройки безопасности приложения.
+ * Этот класс настраивает аутентификацию, авторизацию и управление сессиями
+ * с использованием Spring Security.
+ */
 @RequiredArgsConstructor
 @Configuration
 @EnableWebSecurity
@@ -28,11 +33,23 @@ public class SecurityConfig {
     private final CustomUserDetailsService customUserDetailsService;
     private final JwtDecoder jwtDecoder;
 
+    /**
+     * Создает и настраивает {@link AuthenticationManager} для управления аутентификацией.
+     * @param http объект {@link HttpSecurity}, используемый для настройки безопасности.
+     * @return объект {@link AuthenticationManager}, настроенный для аутентификации.
+     * @throws Exception если возникает ошибка при создании менеджера аутентификации.
+     */
     @Bean
     public AuthenticationManager authenticationManager(HttpSecurity http) throws Exception {
         return http.getSharedObject(AuthenticationManagerBuilder.class).build();
     }
 
+    /**
+     * Создает и настраивает {@link AuthenticationProvider} для аутентификации пользователей
+     * с использованием DAO.
+     * @param auth объект {@link AuthenticationManagerBuilder}, используемый для настройки провайдера аутентификации.
+     * @return объект {@link AuthenticationProvider}, настроенный для аутентификации пользователей.
+     */
     @Bean
     public AuthenticationProvider daoAuthProvider(AuthenticationManagerBuilder auth) {
         var provider = new DaoAuthenticationProvider();
@@ -41,6 +58,13 @@ public class SecurityConfig {
         return provider;
     }
 
+    /**
+     * Создает и настраивает {@link SecurityFilterChain} для обработки запросов и настройки безопасности.
+     * @param http объект {@link HttpSecurity}, используемый для настройки безопасности.
+     * @param introspector объект {@link HandlerMappingIntrospector}, используемый для создания MVC матчеров.
+     * @return объект {@link SecurityFilterChain}, настроенный для обработки запросов
+     * @throws Exception если возникает ошибка при настройке цепочки фильтров безопасности.
+     */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http, HandlerMappingIntrospector introspector)
             throws Exception {
@@ -59,6 +83,5 @@ public class SecurityConfig {
                 .httpBasic(Customizer.withDefaults())
                 .build();
     }
-
 
 }
