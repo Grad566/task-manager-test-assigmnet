@@ -1,6 +1,7 @@
 package test.task.app.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import test.task.app.dto.TaskParamDTO;
 import test.task.app.exception.ResourceNotFoundException;
@@ -15,7 +16,6 @@ import test.task.app.specification.TaskSpecification;
 import test.task.app.util.UserUtils;
 
 import org.springframework.data.domain.Pageable;
-import java.util.List;
 
 /**
  * Сервис для управления задачами.
@@ -36,9 +36,9 @@ public class TaskService {
      * @param params Параметры фильтрации задач.
      * @return Список DTO всех задач.
      */
-    public List<TaskDTO> getAll(Pageable pageable, TaskParamDTO params) {
+    public Page<TaskDTO> getAll(Pageable pageable, TaskParamDTO params) {
         var spec = taskSpecification.build(params);
-        return repository.findAll(spec, pageable).stream().map(mapper::map).toList();
+        return repository.findAll(spec, pageable).map(mapper::map);
     }
 
     /**
