@@ -8,6 +8,9 @@ import lombok.Getter;
 import lombok.Setter;
 import org.openapitools.jackson.nullable.JsonNullable;
 
+/**
+ * DTO для создания пользователя.
+ */
 @Getter
 @Setter
 @Schema(description = "Создание пользователя")

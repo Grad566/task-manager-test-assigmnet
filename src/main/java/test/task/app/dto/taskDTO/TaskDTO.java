@@ -9,6 +9,12 @@ import lombok.Setter;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * DTO (Data Transfer Object) для представления сущности задачи.
+ * Этот класс используется для передачи данных о задаче, включая
+ * её название, описание, статус, приоритет, идентификатор автора,
+ * исполнителей и комментарии. Он предназначен для использования в API.
+ */
 @Getter
 @Setter
 @Schema(description = "Сущность задача")

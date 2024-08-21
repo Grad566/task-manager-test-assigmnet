@@ -28,6 +28,12 @@ import java.util.Collection;
 import java.util.List;
 
 
+/**
+ * Сущность пользователя, представляющая пользователя в системе.
+ * Этот класс реализует интерфейс {@link UserDetails} и используется для
+ * хранения информации о пользователе, включая его имя, электронную почту,
+ * пароль, а также задачи, которые он создал или к которым был назначен
+ */
 @Getter
 @Setter
 @Entity
@@ -61,16 +67,28 @@ public class User implements UserDetails, BaseEntity {
     @ManyToMany(mappedBy = "assignees", fetch = FetchType.EAGER)
     private List<Task> assignedTasks;
 
+    /**
+     * Возвращает коллекцию прав пользователя.
+     * @return коллекция прав пользователя (в данном случае пустая).
+     */
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return new ArrayList<GrantedAuthority>();
     }
 
+    /**
+     * Возвращает имя пользователя (в данном случае - электронную почту).
+     * @return электронная почта пользователя.
+     */
     @Override
     public String getUsername() {
         return email;
     }
 
+    /**
+     * Возвращает пароль пользователя.
+     * @return пароль пользователя.
+     */
     @Override
     public String getPassword() {
         return password;

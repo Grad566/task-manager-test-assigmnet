@@ -7,6 +7,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * DTO для создания статуса задачи.
+ */
 @Getter
 @Setter
 @AllArgsConstructor

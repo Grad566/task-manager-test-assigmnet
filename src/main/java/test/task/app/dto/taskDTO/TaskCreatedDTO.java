@@ -8,6 +8,12 @@ import org.openapitools.jackson.nullable.JsonNullable;
 
 import java.util.List;
 
+/**
+ * DTO (Data Transfer Object) для создания задачи.
+ * Этот класс используется для передачи данных о новой задаче,
+ * которая будет создана в системе. Он содержит информацию о названии,
+ * описании, статусе, приоритете и исполнителях задачи.
+ */
 @Getter
 @Setter
 @Schema(description = "Создание задачи")

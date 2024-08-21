@@ -8,6 +8,9 @@ import lombok.Setter;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * DTO для представления сущности пользователя.
+ */
 @Getter
 @Setter
 @Schema(description = "Сущность пользователя")

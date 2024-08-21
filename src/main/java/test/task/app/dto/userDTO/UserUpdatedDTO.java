@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 import org.openapitools.jackson.nullable.JsonNullable;
 
+/**
+ * DTO для обновления пользователя. Все поля являются опциональными.
+ */
 @Getter
 @Setter
 @Schema(description = "Обновление пользователя, все опционально")

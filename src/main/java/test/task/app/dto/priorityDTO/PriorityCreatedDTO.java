@@ -8,6 +8,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * DTO (Data Transfer Object) для создания приоритета.
+ * Этот класс используется для передачи данных о новом приоритете,
+ * который будет создан в системе. Он содержит информацию о названии
+ * приоритета, которое является обязательным.
+ */
 @Getter
 @Setter
 @AllArgsConstructor

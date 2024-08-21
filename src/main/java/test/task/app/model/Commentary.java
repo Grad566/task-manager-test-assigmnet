@@ -18,6 +18,12 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDate;
 
+/**
+ * Сущность комментария, представляющая комментарий к задаче.
+ * Этот класс используется для хранения информации о комментариях,
+ * включая содержание комментария, автора, задачу, к которой он относится,
+ * а также даты создания и последнего обновления.
+ */
 @Getter
 @Setter
 @Entity
@@ -27,16 +33,21 @@ public class Commentary {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @NotBlank
     private String content;
+
     @NotNull
     @ManyToOne
     private User author;
+
     @NotNull
     @ManyToOne(cascade = CascadeType.MERGE)
     private Task task;
+
     @CreatedDate
     private LocalDate cratedAt;
+
     @LastModifiedDate
     private LocalDate updatedAt;
 }

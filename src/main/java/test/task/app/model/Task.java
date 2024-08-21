@@ -23,6 +23,12 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * Сущность задачи, представляющая задачу в системе.
+ * Этот класс используется для хранения информации о задачах, включая
+ * заголовок, описание, статус, приоритет, автора, исполнителей, комментарии,
+ * а также даты создания и последнего обновления.
+ */
 @Getter
 @Setter
 @Entity

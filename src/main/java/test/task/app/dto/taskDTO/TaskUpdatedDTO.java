@@ -9,6 +9,9 @@ import org.openapitools.jackson.nullable.JsonNullable;
 
 import java.util.List;
 
+/**
+ * DTO для обновления задачи. Все поля являются опциональными.
+ */
 @Getter
 @Setter
 @Schema(description = "Обновление задачи, все опционально")
