@@ -49,7 +49,7 @@ public class TaskController {
      * @param page номер страницы (по умолчанию 0)
      * @param size количество задач на странице (по умолчанию 100).
      * @param params параметры для фильтрации задач.
-     * @return список {@link TaskDTO}, представляющий все задачи.
+     * @return {@link Page<TaskDTO>} объект, содержащий список задач и метаинформацию о пагинации
      */
     @GetMapping()
     public Page<TaskDTO> getAll(

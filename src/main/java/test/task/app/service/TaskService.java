@@ -34,7 +34,7 @@ public class TaskService {
      * Получает список всех задач с учетом параметров и пагинации.
      * @param pageable Параметры пагинации.
      * @param params Параметры фильтрации задач.
-     * @return Список DTO всех задач.
+     * @return {@link Page<TaskDTO>} объект, содержащий список задач и метаинформацию о пагинации.
      */
     public Page<TaskDTO> getAll(Pageable pageable, TaskParamDTO params) {
         var spec = taskSpecification.build(params);
